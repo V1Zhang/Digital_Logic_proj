@@ -1,0 +1,122 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jan  3 13:22:28 2024
+# Process ID: 65184
+# Current directory: D:/final-piano/piano
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29960 D:\final-piano\piano\piano.xpr
+# Log file: D:/final-piano/piano/vivado.log
+# Journal file: D:/final-piano/piano\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/final-piano/piano/piano.xpr
+update_compile_order -fileset sources_1
+reset_run model2_synth_1
+reset_run model3_synth_1
+reset_run model1_synth_1
+reset_run synth_1
+export_ip_user_files -of_objects  [get_files D:/final-piano/piano/piano.srcs/sources_1/imports/new/VGA.v] -no_script -reset -force -quiet
+remove_files  D:/final-piano/piano/piano.srcs/sources_1/imports/new/VGA.v
+remove_files  D:/final-piano/piano/piano.srcs/sources_1/imports/new/VGA.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/final-piano/piano/piano.srcs/model4/ip/model4/model4.xci] -no_script -reset -force -quiet
+remove_files  -fileset model4 D:/final-piano/piano/piano.srcs/model4/ip/model4/model4.xci
+remove_files  D:/final-piano/piano/piano.srcs/model4/ip/model4/model4.xci
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files D:/final-piano/piano/piano.srcs/model1/ip/model1/model1.xci] -no_script -reset -force -quiet
+remove_files  -fileset model1 D:/final-piano/piano/piano.srcs/model1/ip/model1/model1.xci
+export_ip_user_files -of_objects  [get_files D:/final-piano/piano/piano.srcs/model2/ip/model2/model2.xci] -no_script -reset -force -quiet
+remove_files  -fileset model2 D:/final-piano/piano/piano.srcs/model2/ip/model2/model2.xci
+export_ip_user_files -of_objects  [get_files D:/final-piano/piano/piano.srcs/model3/ip/model3/model3.xci] -no_script -reset -force -quiet
+remove_files  -fileset model3 D:/final-piano/piano/piano.srcs/model3/ip/model3/model3.xci
+remove_files  D:/final-piano/piano/piano.srcs/model1/ip/model1/model1.xci
+remove_files  D:/final-piano/piano/piano.srcs/model2/ip/model2/model2.xci
+launch_runs synth_1 -jobs 8
+set_property -dict [list CONFIG.Coe_File {D:/final-piano/piano/CrazyBird.coe}] [get_ips pic]
+generate_target all [get_files  D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci]
+catch { config_ip_cache -export [get_ips -all pic] }
+export_ip_user_files -of_objects [get_files D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci]
+launch_runs -jobs 8 pic_synth_1
+export_simulation -of_objects [get_files D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci] -directory D:/final-piano/piano/piano.ip_user_files/sim_scripts -ip_user_files_dir D:/final-piano/piano/piano.ip_user_files -ipstatic_source_dir D:/final-piano/piano/piano.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/final-piano/piano/piano.cache/compile_simlib/modelsim} {questa=D:/final-piano/piano/piano.cache/compile_simlib/questa} {riviera=D:/final-piano/piano/piano.cache/compile_simlib/riviera} {activehdl=D:/final-piano/piano/piano.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+set_property -dict [list CONFIG.Coe_File {D:/final-piano/piano/CrazyBird.coe}] [get_ips pic]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+export_ip_user_files -of_objects  [get_files c:/Users/lenovo/Desktop/CrazyBird.coe] -no_script -reset -force -quiet
+remove_files  c:/Users/lenovo/Desktop/CrazyBird.coe
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw
+connect_hw_server
+disconnect_hw_server localhost:3121
+connect_hw_server
+disconnect_hw_server localhost:3121
+connect_hw_server
+disconnect_hw_server localhost:3121
+connect_hw_server
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/final-piano/piano/piano.runs/impl_1/MiniPiano.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/final-piano/piano/piano.runs/impl_1/MiniPiano.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/final-piano/piano/piano.runs/impl_1/MiniPiano.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/final-piano/piano/piano.runs/impl_1/MiniPiano.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {D:/final-piano/piano/piano.runs/impl_1/MiniPiano.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
