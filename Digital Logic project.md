@@ -77,6 +77,7 @@ lab: Wed 5-6
 
 
 #### System usage instructions
+[![](pic/free mode.png "free mode pic")]
 
 <img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102081113967.png" alt="image-20240102081113967" style="zoom: 67%;" />
 
