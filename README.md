@@ -6,7 +6,7 @@
 
 |       | **Student Name**           | Student ID | Main work                                                    | contribution percentage |
 | ----- | -------------------------- | ---------- | ------------------------------------------------------------ | ----------------------- |
-| **1** | 叶航见<br />（Ye hangjian) | 12212012   | 1. Basic functions of Free Mode <br />2. Basic functions of AutoPlayMode <br />3. Basic functions of Learn Mode<br /<br />4. Adjust the position of keys | 50%                     |
+| **1** | 叶航见<br />（Ye Hangjian) | 12212012   | 1. Basic functions of Free Mode <br />2. Basic functions of AutoPlayMode <br />3. Basic functions of Learn Mode<br /<br />4. Adjust the position of keys | 50%                     |
 | **2** | 张伟祎<br />（Zhang Weiyi) | 12210653   | 1. Top Module<br />2. light_7_seg_tube and the indicator light of all module<br />3. VGA<br />4. save the performance records | 50%                     |
 
 lab: Wed 5-6
