@@ -79,21 +79,19 @@ lab: Wed 5-6
 #### System usage instructions
 <img src="pic/free%20mode.png" alt="Free Mode" title="Free Mode Pic" width="67%">
 
-<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102081113967.png" alt="image-20240102081113967" style="zoom: 67%;" />
+<img src="pic/auto%20mode.png" alt="Auto Mode" title="Auto Mode Pic" width="67%">
 
-<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102094441027.png" alt="image-20240102094441027" style="zoom: 80%;" />
+<img src="pic/learning%20mode.png" alt="Learning Mode" title="Learning Mode Pic" width="67%">
 
-<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102081829372.png" alt="image-20240102081829372" style="zoom:67%;" />
+<img src="pic/recording%20music%20mode.png" alt="Recording Music Mode" title="Recording Music Mode Pic" width="67%">
 
-<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102094646325.png" alt="image-20240102094646325" style="zoom:67%;" />
-
-<img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102215004110.png" alt="image-20240102215004110" style="zoom:67%;" />
+<img src="pic/top%20module.png" alt="Top Module" title="Top Module Pic" width="67%">
 
 
 
 #### System structure description 
 
-<img src="C:\Users\lenovo\Desktop\模块结构.png" alt="模块结构" style="zoom: 67%;" />
+<img src="pic/模块结构.png" alt="模块结构" title="模块结构" width="67%">
 
 
 
