@@ -1,0 +1,13 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+D:/Digital Logic/WORK/piano/piano.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/imports/new/JingleBells.v,1703741188,verilog,,D:/Digital Logic/WORK/piano/piano.srcs/sources_1/imports/new/LittleStar.v,,Spring,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/imports/new/LittleStar.v,1703533387,verilog,,D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/debounce_button.v,,LittleStar,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/imports/new/seven_seg_tube.v,1702817370,verilog,,D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/AutoPlayMode.v,,light_7seg_tube,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/AutoPlayMode.v,1703741218,verilog,,,,AutoPlayMode,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/HappyBirthday.v,1703741397,verilog,,D:/Digital Logic/WORK/piano/piano.srcs/sources_1/imports/new/JingleBells.v,,HappyBirthday,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/debounce_button.v,1702112027,verilog,,D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/divclk_20ms.v,,debounce_button,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/divclk_20ms.v,1702112109,verilog,,D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/scan_seg.v,,divclk_20ms,,,,,,,,
+D:/Digital Logic/WORK/piano/piano.srcs/sources_1/new/scan_seg.v,1703035427,verilog,,D:/Digital Logic/WORK/piano/piano.srcs/sources_1/imports/new/seven_seg_tube.v,,scan_seg,,,,,,,,
