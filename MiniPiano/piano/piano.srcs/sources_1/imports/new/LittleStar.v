@@ -23,7 +23,8 @@
 module LittleStar(
 input clk,rst_n,key,
 output reg [6:0]light,
-input replay,
+input reset1,
+input reset2,
 output speaker,
 output s
     );
@@ -136,6 +137,11 @@ wire clk_20ms;
 wire key_pulse;
 divclk_20ms div(clk,rst_n,clk_20ms);
 debounce_button b(clk_20ms,rst_n,key,key_pulse);
+//replay
+wire key2_pulse;
+wire key3_pulse;
+debounce_button b1(clk_20ms,rst_n,reset1,key2_pulse);
+debounce_button b2(clk_20ms,rst_n,reset2,key3_pulse);
 reg [31:0] counter ;
 reg [31:0] counter_beat ;
 reg [31:0] counter_stop ;
@@ -144,6 +150,10 @@ reg [5:0] state ;
 reg stop;
 reg pre_pulse1;
 reg now_pulse1;
+reg pre_pulse2;
+reg now_pulse2;
+reg pre_pulse3;
+reg now_pulse3;
 always @ ( posedge clk ) begin
 if(~rst_n)
  begin
@@ -154,17 +164,35 @@ if(~rst_n)
     counter_stop<=0;
     pre_pulse1<=1'b0;
     now_pulse1<=1'b0;
+    pre_pulse2<=1'b0;
+    now_pulse2<=1'b0;
+    pre_pulse3<=1'b0;
+    now_pulse3<=1'b0;
     stop<=1'b1;
  end
 else
     begin
         pre_pulse1<=now_pulse1;
         now_pulse1<=key_pulse;
+        pre_pulse2<=now_pulse2;
+        now_pulse2<=key2_pulse;
+        pre_pulse3<=now_pulse3;
+        now_pulse3<=key3_pulse;
         if(~pre_pulse1&now_pulse1)
             begin
-              stop=~stop;
+              stop<=~stop;
             end 
-        else 
+        else if(~pre_pulse2&now_pulse2)
+            begin
+              stop<=1'b1;
+              state<=0;
+            end 
+        else if(~pre_pulse3&now_pulse3)
+            begin
+              stop<=1'b1;
+              state<=0;
+            end
+        else         
             begin
                 stop=stop;
             end
@@ -182,8 +210,6 @@ else
                 7: light = 7'b0000001;
                 default: light = 7'b0000000;
             endcase
-        end
-        begin
         if(counter_beat<allnote[state][1])
         begin
             if(stop)
@@ -220,6 +246,11 @@ else
             counter_stop<=0;
             end 
         end      
+        end
+        else
+        begin
+            state<=0;
+            stop<=1'b1;
         end
     end
 end

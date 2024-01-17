@@ -1,93 +1,73 @@
+
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2023/12/30 23:58:48
-// Design Name: 
-// Module Name: VGAcontroller
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-module VGAcontroller (
-input wire clock, //系统时钟 100MHZ
-input wire rst, //时钟复位端
-output reg [3:0] red, // VGA 数据输出
+module VGAcontroller(
+input clock, 
+input rst,
+output reg [3:0] red, // VGA 
 output reg [3:0] green,
 output reg [3:0] blue,
-output reg hsync, // VGA 行同步信号
-output reg vsync // VGA 场同步信
+output reg hsync, // VGA Line synchronization signal
+output reg vsync, // VGA Field synchronization signal
+input [3:0]yidong
 );
-wire [3:0] yidong;
-reg[9:0] hcount = 0; // 行扫描计数器
-reg[9:0] vcount = 0; // 场扫描计数器
-wire hcount_ov; //行扫描结束标志位
-wire vcount_ov; //帧扫描结束标志位
-wire data_act; //显示阶段 data 有效
-//VGA 行、场扫描时序参数表
-parameter hsync_end = 10'd95, //行同步信号（低电平）结束
-hdata_begin = 10'd143, //行显示开始
-hdata_end = 10'd783, //行显示结束
-hpixel_end = 10'd799, //行显示前延结束
+reg[9:0] hcount = 0; // Line synchronization counter
+reg[9:0] vcount = 0; // Field synchronization counter
+wire hcount_ov; //End of line scan flag bit
+wire vcount_ov; //End of frame scan flag bit
+wire data_act; //Display phase data is valid
+//VGA Row and field scan timing parameter table
+parameter hsync_end = 10'd95, //End of line synchronization signal (low level)
+hdata_begin = 10'd143, //Line display start
+hdata_end = 10'd783, //End of line display
+hpixel_end = 10'd799, //The line shows the end of the delay
 vsync_end = 10'd1, vdata_begin = 10'd34, vdata_end = 10'd514, vline_end =10'd524;
-//VGA 驱动程序
-//行扫描
+//VGA driver
+//Line scan
 always@(posedge clock)
 begin
-if(hcount_ov) //若行扫描标志位为 1，换行
-hcount<=10'd0; //行扫描计数器置 0
+if(hcount_ov) //If the line scan flag bit is 1, the line is wrapped
+hcount<=10'd0; //Set line scan counter to 0
 else
-hcount<= hcount +1; //行扫描计数器+1
+hcount<= hcount +1; //Line scan counter +1
 end
-assign hcount_ov = (hcount == hpixel_end); //行计数器=799，扫描一行结束，
-//场扫描
+assign hcount_ov = (hcount == hpixel_end); //Line counter =799, end of scan line,
+//Line scan flag bits are valid
 always@(posedge clock)
 begin
-if(hcount_ov) //行扫描标志位有效
+if(hcount_ov) //Line scan flag bits are valid
 begin
-if(vcount_ov) //帧扫描标志位有效，场扫描计数器置零，重新计数
+if(vcount_ov) //Frame scan flag bit valid, field scan counter set to zero, re-count
 vcount<=10'd0;
 else
-vcount<= vcount +10'd1; //场扫描计数器加 1
+vcount<= vcount +10'd1; //Field scan counter plus 1
 end
 end
-assign vcount_ov = (vcount == vline_end); //场计数器=524，一帧显示结束，给
-//数据、同步信号输出
+assign vcount_ov = (vcount == vline_end); //Field counter =524, one frame display end
+//Data, synchronization signal output
 assign data_act = ((hcount>=hdata_begin-2) &&
-(hcount<hdata_end))&&((vcount>=vdata_begin-2)&& (vcount<vdata_end)); //显示阶
+(hcount<hdata_end))&&((vcount>=vdata_begin-2)&& (vcount<vdata_end)); //Display level
 
 always@(posedge clock)
 begin
- hsync <= (hcount > hsync_end);//行计数器大于 95，行同步信号置 1
- vsync <= (vcount > vsync_end); //场计数器大于 1，场同步信号置 1
+ hsync <= (hcount > hsync_end);//If the line counter is greater than 95, the line synchronization signal is set to 1
+ vsync <= (vcount > vsync_end); //If the field counter is greater than 1, the field synchronization signal is set to 1
 end
 reg [3:0] datar;reg [3:0] datag;reg [3:0] datab;
 
 always@(posedge clock)
 begin
- red[3:0] <= (data_act) ? datar : 4'b0000;//显示阶段，输出数据，否则输8
- green[3:0] <= (data_act) ? datag : 4'b0000;//显示阶段，输出数据，否则输8
- blue [3:0]<= (data_act) ? datab : 4'b0000;//显示阶段，输出数据，否则输8
+ red[3:0] <= (data_act) ? datar : 4'b0000;
+ green[3:0] <= (data_act) ? datag : 4'b0000;
+ blue [3:0]<= (data_act) ? datab : 4'b0000;
 end
 reg [15:0] addra = 16'b0;
 wire [15:0] douta;
-pic start(
+pic pic(
     .addra(addra),
     .clka(clock),
     .douta(douta)
     );
-    reg [15:0] xiaodou;//移动消抖
+    reg [15:0] xiaodou;
     always@(posedge clock)
     begin 
     xiaodou[3:0] <= {xiaodou[2:0],yidong[0]};
@@ -97,12 +77,12 @@ pic start(
     end
     
     wire [3:0] yidongend;
-    assign yidongend[0] = (xiaodou[3:0]==4'b1111)?1:0; //shang
-     assign yidongend[1] = (xiaodou[7:4]==4'b1111)?1:0; //xia
-      assign yidongend[2] = (xiaodou[11:8]==4'b1111)?1:0;//zuo
-       assign yidongend[3] = (xiaodou[15:12]==4'b1111)?1:0;//you
+    assign yidongend[0] = (xiaodou[3:0]==4'b1111)?1:0; //up
+     assign yidongend[1] = (xiaodou[7:4]==4'b1111)?1:0; //down
+      assign yidongend[2] = (xiaodou[11:8]==4'b1111)?1:0;//left
+       assign yidongend[3] = (xiaodou[15:12]==4'b1111)?1:0;//right
        
-       reg[8:0] h = 143;reg[8:0] v = 34;  //控制移动和移动速度
+       reg[8:0] h = 143;reg[8:0] v = 34;  //Control movement and speed of movement
        always@(posedge clock )
        begin
        if(vcount == 6&hcount ==6)

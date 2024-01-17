@@ -36,13 +36,13 @@ output [7:0] seg_out2,
 output seg_en,
 output seg_en2
 ) ;
+assign s = 1'b0;
 reg [3:0] cnt;//reprensent the current tone
 //the function of key to change the ptone
 wire clk_20ms;
 wire key1_pulse;
 wire key2_pulse;
 wire key3_pulse;
-assign s = 0;
 divclk_20ms div(clk,rst,clk_20ms);
 debounce_button b1(clk_20ms,rst,key1,key1_pulse);
 debounce_button b2(clk_20ms,rst,key2,key2_pulse);

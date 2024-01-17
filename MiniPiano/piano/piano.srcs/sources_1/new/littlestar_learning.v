@@ -21,12 +21,20 @@
 
 
 module littlestar_learning(
-input clk,rst_n,
+input clk,rst,
 input [6:0]note,
+input key1,//to switch users
+input key2,//to switch users
+input key_confirm,//to confirm the level
 output speaker,
 output s,
-output reg [6:0]light
+output reg [6:0]light,
+output [7:0] seg_out,
+output [7:0] seg_out2,
+output [3:0] segs,
+output seg_en2
     );
+reg [3:0]users[3:0];
 assign s=1'b0;
 reg [31:0] notes [7:0];
 always @*
@@ -129,14 +137,33 @@ begin
     allnote[42][0]=1;
     allnote[42][1]=minim;
 end
+wire clk_20ms;
+wire key1_pulse;
+wire key2_pulse;
+wire key3_pulse;
+divclk_20ms div(clk,rst,clk_20ms);
+debounce_button b1(clk_20ms,rst,key1,key1_pulse);
+debounce_button b2(clk_20ms,rst,key2,key2_pulse);
+debounce_button b3(clk_20ms,rst,key_confirm,key3_pulse);
+
+reg pre_pulse1;
+reg now_pulse1;
+reg pre_pulse2;
+reg now_pulse2;
+reg pre_pulse3;
+reg now_pulse3;
+
 reg [31:0] counter ;
 reg [31:0] counter_beat ;
 reg [31:0] counter_break ;
+reg [31:0] counter_deduct ;//every 25000000 ns grade-1
 reg pwm ;
 reg [5:0] state ;
-
+reg [6:0]grade;
+reg [3:0]level;
+reg [3:0]user_index;
 always @ ( posedge clk ) begin
-if(~rst_n)
+if(~rst)
  begin
     counter<=0;
     pwm<=0; 
@@ -144,19 +171,53 @@ if(~rst_n)
     state<=1;
     light<=0;
     counter_break<=0;
+    grade<=7'd100;
+    counter_deduct<=0;
+    //initialize users
+    users[1]<=4'b0000;
+    users[2]<=4'b0001;
+    users[3]<=4'b0010;
+
+    user_index<=4'b0010;
+
+    pre_pulse1<=1'b0;
+    now_pulse1<=1'b0;
+    pre_pulse2<=1'b0;
+    now_pulse2<=1'b0;
+    pre_pulse3<=1'b0;
+    now_pulse3<=1'b0;
+
  end
  else
     begin
+        pre_pulse1<=now_pulse1;
+        now_pulse1<=key1_pulse;
+        pre_pulse2<=now_pulse2;
+        now_pulse2<=key2_pulse;
+        pre_pulse3<=now_pulse3;
+        now_pulse3<=key3_pulse;
+        if(~pre_pulse1 & now_pulse1)
+            begin
+            if(user_index==4'b0011) user_index<=user_index;
+            else user_index<=user_index+1'b1;
+            end 
+        else if(~pre_pulse2 & now_pulse2)
+            begin
+            if(user_index==4'b0000) user_index<=user_index;
+            else user_index<=user_index-1'b1;
+            end 
+
+
         if(state!=43)
         begin//let corresponding light trun on
             case (allnote[state][0])
-                1:light<=7'b0000001;
-                2:light<=7'b0000010;
-                3:light<=7'b0000100;
-                4:light<=7'b0001000;
-                5:light<=7'b0010000;
-                6:light<=7'b0100000;
-                7:light<=7'b1000000;
+               1: light = 7'b0000001;
+               2: light = 7'b0000010;
+               3: light = 7'b0000100;
+               4: light = 7'b0001000;
+               5: light = 7'b0010000;
+               6: light = 7'b0100000;
+               7: light = 7'b1000000;
             endcase
        if (note[allnote[state][0]-1]) begin
          if(counter<notes[allnote[state][0]])
@@ -173,7 +234,21 @@ if(~rst_n)
         if(counter_beat>=allnote[state][1])
         begin
             light<=7'b0000000;
-            if (!note[allnote[state][0]-1]) begin
+            if (note[allnote[state][0]-1]) 
+            begin
+                if(counter_deduct<50000000)
+                    begin
+                        counter_deduct<=counter_deduct+1'b1;
+                    end
+                else 
+                    begin
+                        if(grade>0)grade<=grade-1'b1;
+                        else grade<=grade;
+                        counter_deduct<=0;
+                    end
+            end
+            else
+            begin
                 counter_break<=counter_break+1;
             end
             if (counter_break==1000000) begin
@@ -183,7 +258,45 @@ if(~rst_n)
             end         
         end   
         end
+        else
+        begin
+            if(~pre_pulse3 & now_pulse3)
+            begin
+                begin
+                    state<=1;
+                    grade<=7'd100;
+                end
+                if (users[user_index]<level) begin
+                    users[user_index]<=level;
+                end
+                else users[user_index]<=users[user_index];
+            end
+        end
     end
 end
+
+always @(*) begin
+    if(grade>7'd90)
+    begin
+        level=4'b0101;
+    end
+    else if (grade>7'd80&grade<=7'd90) begin
+        level=4'b0100;
+    end
+     else if (grade>7'd70&grade<=7'd80) begin
+        level=4'b0011;
+    end
+     else if (grade>7'd60&grade<=7'd70) begin
+        level=4'b0010;
+    end
+    else
+    begin
+        level=4'b0001;
+    end
+end
+    
 assign speaker=pwm;
+
+scan_seg three_seg(.rst(rst), .clk(clk), .in3(user_index), .in2(4'b1111), .in1(users[user_index]), .in0(4'b1111), .segs(segs), .seg_out(seg_out));
+light_7seg_tube seg_tube2(.sw(level), .rst(rst), .seg_out(seg_out2), .seg_en(seg_en2));
 endmodule

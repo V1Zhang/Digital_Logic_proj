@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7a35tcsg324-1
@@ -25,15 +24,15 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {D:/Digital Logic/WORK/piano/piano.cache/wt} [current_project]
-set_property parent.project_path {D:/Digital Logic/WORK/piano/piano.xpr} [current_project]
+set_property webtalk.parent_dir D:/final-piano/piano/piano.cache/wt [current_project]
+set_property parent.project_path D:/final-piano/piano/piano.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo {d:/Digital Logic/WORK/piano/piano.cache/ip} [current_project]
+set_property ip_output_repo d:/final-piano/piano/piano.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet {{d:/Digital Logic/git/IP/pic/pic.xci}}
-set_property used_in_implementation false [get_files -all {{d:/Digital Logic/git/IP/pic/pic_ooc.xdc}}]
+read_ip -quiet D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci
+set_property used_in_implementation false [get_files -all d:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -46,7 +45,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 
-set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir {D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1} -new_name pic -ip [get_ips pic]]
+set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir D:/final-piano/piano/piano.runs/pic_synth_1 -new_name pic -ip [get_ips pic]]
 
 if { $cached_ip eq {} } {
 
@@ -85,25 +84,25 @@ write_checkpoint -force -noxdef pic.dcp
 create_report "pic_synth_1_synth_report_utilization_0" "report_utilization -file pic_utilization_synth.rpt -pb pic_utilization_synth.pb"
 
 if { [catch {
-  write_verilog -force -mode synth_stub {D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_stub.v}
+  write_verilog -force -mode synth_stub D:/final-piano/piano/piano.runs/pic_synth_1/pic_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub {D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_stub.vhdl}
+  write_vhdl -force -mode synth_stub D:/final-piano/piano/piano.runs/pic_synth_1/pic_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim {D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_sim_netlist.v}
+  write_verilog -force -mode funcsim D:/final-piano/piano/piano.runs/pic_synth_1/pic_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim {D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_sim_netlist.vhdl}
+  write_vhdl -force -mode funcsim D:/final-piano/piano/piano.runs/pic_synth_1/pic_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -114,36 +113,36 @@ if { [catch {
 
 }; # end if cached_ip 
 
-add_files {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_stub.v}} -of_objects [get_files {{d:/Digital Logic/git/IP/pic/pic.xci}}]
+add_files D:/final-piano/piano/piano.runs/pic_synth_1/pic_stub.v -of_objects [get_files D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci]
 
-add_files {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_stub.vhdl}} -of_objects [get_files {{d:/Digital Logic/git/IP/pic/pic.xci}}]
+add_files D:/final-piano/piano/piano.runs/pic_synth_1/pic_stub.vhdl -of_objects [get_files D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci]
 
-add_files {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_sim_netlist.v}} -of_objects [get_files {{d:/Digital Logic/git/IP/pic/pic.xci}}]
+add_files D:/final-piano/piano/piano.runs/pic_synth_1/pic_sim_netlist.v -of_objects [get_files D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci]
 
-add_files {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_sim_netlist.vhdl}} -of_objects [get_files {{d:/Digital Logic/git/IP/pic/pic.xci}}]
+add_files D:/final-piano/piano/piano.runs/pic_synth_1/pic_sim_netlist.vhdl -of_objects [get_files D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci]
 
-add_files {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic.dcp}} -of_objects [get_files {{d:/Digital Logic/git/IP/pic/pic.xci}}]
+add_files D:/final-piano/piano/piano.runs/pic_synth_1/pic.dcp -of_objects [get_files D:/final-piano/piano/piano.srcs/sources_1/ip/pic/pic.xci]
 
-if {[file isdir {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}]} {
+if {[file isdir D:/final-piano/piano/piano.ip_user_files/ip/pic]} {
   catch { 
-    file copy -force {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_sim_netlist.v}} {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}
+    file copy -force D:/final-piano/piano/piano.runs/pic_synth_1/pic_sim_netlist.v D:/final-piano/piano/piano.ip_user_files/ip/pic
   }
 }
 
-if {[file isdir {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}]} {
+if {[file isdir D:/final-piano/piano/piano.ip_user_files/ip/pic]} {
   catch { 
-    file copy -force {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_sim_netlist.vhdl}} {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}
+    file copy -force D:/final-piano/piano/piano.runs/pic_synth_1/pic_sim_netlist.vhdl D:/final-piano/piano/piano.ip_user_files/ip/pic
   }
 }
 
-if {[file isdir {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}]} {
+if {[file isdir D:/final-piano/piano/piano.ip_user_files/ip/pic]} {
   catch { 
-    file copy -force {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_stub.v}} {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}
+    file copy -force D:/final-piano/piano/piano.runs/pic_synth_1/pic_stub.v D:/final-piano/piano/piano.ip_user_files/ip/pic
   }
 }
 
-if {[file isdir {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}]} {
+if {[file isdir D:/final-piano/piano/piano.ip_user_files/ip/pic]} {
   catch { 
-    file copy -force {{D:/Digital Logic/WORK/piano/piano.runs/pic_synth_1/pic_stub.vhdl}} {D:/Digital Logic/WORK/piano/piano.ip_user_files/ip/pic}
+    file copy -force D:/final-piano/piano/piano.runs/pic_synth_1/pic_stub.vhdl D:/final-piano/piano/piano.ip_user_files/ip/pic
   }
 }

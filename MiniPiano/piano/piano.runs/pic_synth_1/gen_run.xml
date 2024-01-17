@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="pic_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1703990673">
+<GenRun Id="pic_synth_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1704265247">
   <File Type="PA-TCL" Name="pic.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="pic_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="pic_reports.tcl"/>
@@ -10,15 +10,19 @@
   <File Type="VDS-TIMINGSUMMARY" Name="pic_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="pic_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pic">
-    <File Path="$PPRDIR/../../git/IP/pic/pic.xci">
+    <File Path="$PSRCDIR/sources_1/ip/pic/pic.xci">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../git/IP/pic/pic.xci"/>
+        <Attr Name="ImportTime" Val="1704108700"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../git/IP/pic.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/pic.xcix">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../git/IP/pic.xcix"/>
+        <Attr Name="ImportTime" Val="1704108701"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -30,15 +34,19 @@
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/pic">
-    <File Path="$PPRDIR/../../git/IP/pic/pic.xci">
+    <File Path="$PSRCDIR/sources_1/ip/pic/pic.xci">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../git/IP/pic/pic.xci"/>
+        <Attr Name="ImportTime" Val="1704108700"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../git/IP/pic.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/pic.xcix">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../git/IP/pic.xcix"/>
+        <Attr Name="ImportTime" Val="1704108701"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

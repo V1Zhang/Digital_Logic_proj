@@ -1,0 +1,1325 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jan  3 15:39:38 2024
+# Process ID: 23204
+# Current directory: D:/final-piano/piano/piano.runs/synth_1
+# Command line: vivado.exe -log MiniPiano.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MiniPiano.tcl
+# Log file: D:/final-piano/piano/piano.runs/synth_1/MiniPiano.vds
+# Journal file: D:/final-piano/piano/piano.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source MiniPiano.tcl -notrace
+Command: synth_design -top MiniPiano -part xc7a35tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 50192 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 343.945 ; gain = 101.262
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'MiniPiano' [D:/final-piano/piano/piano.srcs/sources_1/new/MiniPiano.v:23]
+INFO: [Synth 8-638] synthesizing module 'scan_seg' [D:/final-piano/piano/piano.srcs/sources_1/new/scan_seg.v:23]
+	Parameter N bound to: 18 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'light_7seg_tube' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/seven_seg_tube.v:23]
+INFO: [Synth 8-256] done synthesizing module 'light_7seg_tube' (1#1) [D:/final-piano/piano/piano.srcs/sources_1/imports/new/seven_seg_tube.v:23]
+INFO: [Synth 8-256] done synthesizing module 'scan_seg' (2#1) [D:/final-piano/piano/piano.srcs/sources_1/new/scan_seg.v:23]
+WARNING: [Synth 8-350] instance 'three_seg' of module 'scan_seg' requires 9 connections, but only 8 given [D:/final-piano/piano/piano.srcs/sources_1/new/MiniPiano.v:87]
+INFO: [Synth 8-638] synthesizing module 'FreeMode' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:23]
+INFO: [Synth 8-638] synthesizing module 'divclk_20ms' [D:/final-piano/piano/piano.srcs/sources_1/new/divclk_20ms.v:23]
+	Parameter period bound to: 2000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'divclk_20ms' (3#1) [D:/final-piano/piano/piano.srcs/sources_1/new/divclk_20ms.v:23]
+INFO: [Synth 8-638] synthesizing module 'debounce_button' [D:/final-piano/piano/piano.srcs/sources_1/new/debounce_button.v:23]
+INFO: [Synth 8-256] done synthesizing module 'debounce_button' (4#1) [D:/final-piano/piano/piano.srcs/sources_1/new/debounce_button.v:23]
+WARNING: [Synth 8-6014] Unused sequential element pre_note_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:115]
+WARNING: [Synth 8-5788] Register real_notes_reg[0] in module FreeMode is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:108]
+WARNING: [Synth 8-3848] Net notes[0] in module/entity FreeMode does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:59]
+INFO: [Synth 8-256] done synthesizing module 'FreeMode' (5#1) [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:23]
+INFO: [Synth 8-638] synthesizing module 'AutoPlayMode' [D:/final-piano/piano/piano.srcs/sources_1/new/AutoPlayMode.v:23]
+WARNING: [Synth 8-350] instance 'three_seg' of module 'scan_seg' requires 9 connections, but only 8 given [D:/final-piano/piano/piano.srcs/sources_1/new/AutoPlayMode.v:80]
+INFO: [Synth 8-638] synthesizing module 'LittleStar' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:23]
+	Parameter crotchet bound to: 50000000 - type: integer 
+	Parameter minim bound to: 100000000 - type: integer 
+WARNING: [Synth 8-3848] Net allnote[0][0] in module/entity LittleStar does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:43]
+WARNING: [Synth 8-3848] Net allnote[0][1] in module/entity LittleStar does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:43]
+WARNING: [Synth 8-3848] Net notes[0] in module/entity LittleStar does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:32]
+INFO: [Synth 8-256] done synthesizing module 'LittleStar' (6#1) [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:23]
+INFO: [Synth 8-638] synthesizing module 'HappyBirthday' [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:23]
+	Parameter quaver bound to: 50000000 - type: integer 
+	Parameter crotchet bound to: 100000000 - type: integer 
+	Parameter minim bound to: 200000000 - type: integer 
+INFO: [Synth 8-4471] merging register 'nowpulse2_reg' into 'prepulse2_reg' [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:138]
+WARNING: [Synth 8-6014] Unused sequential element nowpulse2_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:138]
+WARNING: [Synth 8-3848] Net allnote[42][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[41][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[40][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[39][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[38][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[37][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[36][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[35][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[34][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[33][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[32][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[31][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[30][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[29][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[28][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[27][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[26][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[0][0] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[42][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[41][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[40][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[39][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[38][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[37][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[36][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[35][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[34][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[33][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[32][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[31][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[30][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[29][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[28][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[27][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[26][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+WARNING: [Synth 8-3848] Net allnote[0][1] in module/entity HappyBirthday does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:44]
+INFO: [Synth 8-256] done synthesizing module 'HappyBirthday' (7#1) [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:23]
+INFO: [Synth 8-638] synthesizing module 'Spring' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:23]
+	Parameter semiquaver bound to: 25000000 - type: integer 
+	Parameter quaver bound to: 50000000 - type: integer 
+	Parameter crotchet bound to: 100000000 - type: integer 
+	Parameter minim bound to: 200000000 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element counter_stop_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:671]
+WARNING: [Synth 8-3848] Net allnote[0][0] in module/entity Spring does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:53]
+WARNING: [Synth 8-3848] Net allnote[0][1] in module/entity Spring does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:53]
+INFO: [Synth 8-256] done synthesizing module 'Spring' (8#1) [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/final-piano/piano/piano.srcs/sources_1/new/AutoPlayMode.v:98]
+INFO: [Synth 8-256] done synthesizing module 'AutoPlayMode' (9#1) [D:/final-piano/piano/piano.srcs/sources_1/new/AutoPlayMode.v:23]
+INFO: [Synth 8-638] synthesizing module 'LearnMode' [D:/final-piano/piano/piano.srcs/sources_1/new/LearnMode.v:23]
+INFO: [Synth 8-638] synthesizing module 'littlestar_learning' [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:23]
+	Parameter crotchet bound to: 50000000 - type: integer 
+	Parameter minim bound to: 100000000 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:213]
+WARNING: [Synth 8-350] instance 'three_seg' of module 'scan_seg' requires 9 connections, but only 8 given [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:300]
+WARNING: [Synth 8-3848] Net allnote[0][0] in module/entity littlestar_learning does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:50]
+WARNING: [Synth 8-3848] Net allnote[0][1] in module/entity littlestar_learning does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:50]
+WARNING: [Synth 8-3848] Net notes[0] in module/entity littlestar_learning does not have driver. [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:39]
+INFO: [Synth 8-256] done synthesizing module 'littlestar_learning' (10#1) [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:23]
+INFO: [Synth 8-256] done synthesizing module 'LearnMode' (11#1) [D:/final-piano/piano/piano.srcs/sources_1/new/LearnMode.v:23]
+INFO: [Synth 8-638] synthesizing module 'MusicRecorder' [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:23]
+	Parameter MAX_RECORD_LENGTH bound to: 300 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element counter_stop_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:98]
+INFO: [Synth 8-256] done synthesizing module 'MusicRecorder' (12#1) [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/final-piano/piano/piano.srcs/sources_1/new/MiniPiano.v:128]
+INFO: [Synth 8-638] synthesizing module 'dcm_25m' [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/realtime/dcm_25m_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'dcm_25m' (13#1) [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/realtime/dcm_25m_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'VGAcontroller' [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:3]
+	Parameter hsync_end bound to: 10'b0001011111 
+	Parameter hdata_begin bound to: 10'b0010001111 
+	Parameter hdata_end bound to: 10'b1100001111 
+	Parameter hpixel_end bound to: 10'b1100011111 
+	Parameter vsync_end bound to: 10'b0000000001 
+	Parameter vdata_begin bound to: 10'b0000100010 
+	Parameter vdata_end bound to: 10'b1000000010 
+	Parameter vline_end bound to: 10'b1000001100 
+INFO: [Synth 8-638] synthesizing module 'pic' [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/realtime/pic_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'pic' (14#1) [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/realtime/pic_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'VGAcontroller' (15#1) [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:3]
+INFO: [Synth 8-256] done synthesizing module 'MiniPiano' (16#1) [D:/final-piano/piano/piano.srcs/sources_1/new/MiniPiano.v:23]
+WARNING: [Synth 8-3917] design MiniPiano has port s driven by constant 0
+WARNING: [Synth 8-3331] design VGAcontroller has unconnected port rst
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 534.773 ; gain = 292.090
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 534.773 ; gain = 292.090
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/dcp2/dcm_25m_in_context.xdc] for cell 'dcm_25m'
+Finished Parsing XDC File [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/dcp2/dcm_25m_in_context.xdc] for cell 'dcm_25m'
+Parsing XDC File [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/dcp3/pic_in_context.xdc] for cell 'vga/pic'
+Finished Parsing XDC File [D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/dcp3/pic_in_context.xdc] for cell 'vga/pic'
+Parsing XDC File [D:/final-piano/piano/piano.srcs/constrs_1/new/constraint.xdc]
+Finished Parsing XDC File [D:/final-piano/piano/piano.srcs/constrs_1/new/constraint.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/final-piano/piano/piano.srcs/constrs_1/new/constraint.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/MiniPiano_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/MiniPiano_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 889.855 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 889.855 ; gain = 647.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 889.855 ; gain = 647.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clk. (constraint file  D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/dcp2/dcm_25m_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk. (constraint file  D:/final-piano/piano/piano.runs/synth_1/.Xil/Vivado-23204-supreme/dcp2/dcm_25m_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for dcm_25m. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for vga/pic. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:19 . Memory (MB): peak = 889.855 ; gain = 647.172
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element regN_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/scan_seg.v:35]
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:131]
+INFO: [Synth 8-5544] ROM "lightcontrol_transferFromAddr" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "point" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[7]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[6]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[5]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[4]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "real_notes_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:101]
+WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:116]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:195]
+INFO: [Synth 8-5545] ROM "light" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:160]
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:162]
+WARNING: [Synth 8-6014] Unused sequential element counter_stop_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:164]
+INFO: [Synth 8-5545] ROM "light" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:128]
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:130]
+WARNING: [Synth 8-6014] Unused sequential element counter_stop_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:132]
+INFO: [Synth 8-5545] ROM "light" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:667]
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:669]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:670]
+INFO: [Synth 8-5544] ROM "speaker" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "counter_beat" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "light" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter_break" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter_break" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:168]
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:170]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:171]
+WARNING: [Synth 8-6014] Unused sequential element grade_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:174]
+WARNING: [Synth 8-6014] Unused sequential element counter_deduct_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:175]
+INFO: [Synth 8-5544] ROM "users_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "users_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "counter_beat" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "light" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter_break" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter_break" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "level" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "level" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "level" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "level" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "recorded_data_reg[300][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[299][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[298][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[297][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[296][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[295][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[294][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[293][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[292][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[291][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[290][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[289][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[288][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[287][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[286][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[285][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[284][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[283][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[282][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[281][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[280][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[279][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[278][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[277][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[276][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[275][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[274][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[273][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[272][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[271][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[270][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[269][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[268][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[267][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[266][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[265][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[264][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[263][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[262][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[261][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[260][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[259][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[258][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[257][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[256][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[255][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[254][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[253][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[252][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[251][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[250][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[249][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[248][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[247][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[246][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[245][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[244][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[243][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[242][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[241][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[240][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[239][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[238][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[237][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[236][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[235][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[234][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[233][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[232][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[231][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[230][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[229][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[228][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[227][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[226][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[225][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[224][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[223][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[222][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[221][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[220][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[219][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[218][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[217][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[216][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[215][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[214][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[213][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[212][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[211][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[210][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[209][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[208][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[207][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[206][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[205][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[204][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[203][1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recorded_data_reg[202][1]" won't be mapped to RAM because it is too sparse
+INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5545] ROM "light" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:94]
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:95]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:96]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:94]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:108]
+INFO: [Synth 8-5544] ROM "yidongend_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "yidongend_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "yidongend_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "yidongend_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element hcount_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:29]
+WARNING: [Synth 8-6014] Unused sequential element vcount_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:40]
+WARNING: [Synth 8-6014] Unused sequential element h_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:90]
+INFO: [Synth 8-5544] ROM "cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "speaker" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'notes_reg[7]' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'notes_reg[6]' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'notes_reg[5]' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'notes_reg[4]' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'notes_reg[3]' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'notes_reg[2]' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'notes_reg[1]' [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:64]
+WARNING: [Synth 8-327] inferring latch for variable 'light_reg' [D:/final-piano/piano/piano.srcs/sources_1/new/AutoPlayMode.v:101]
+WARNING: [Synth 8-327] inferring latch for variable 'speaker_reg' [D:/final-piano/piano/piano.srcs/sources_1/new/AutoPlayMode.v:100]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 889.855 ; gain = 647.172
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |MusicRecorder__GB0 |           1|     35549|
+|2     |MusicRecorder__GB1 |           1|     19541|
+|3     |MiniPiano__GC0     |           1|     28977|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 11    
+	   2 Input     16 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 4     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 611   
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 5     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 9     
+	                6 Bit    Registers := 3     
+	                4 Bit    Registers := 24    
+	                1 Bit    Registers := 122   
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 23    
+	   8 Input     32 Bit        Muxes := 4     
+	  43 Input     32 Bit        Muxes := 4     
+	   7 Input     32 Bit        Muxes := 2     
+	 289 Input     32 Bit        Muxes := 1     
+	   8 Input     24 Bit        Muxes := 2     
+	   2 Input     19 Bit        Muxes := 4     
+	   8 Input     19 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 3     
+	   2 Input     16 Bit        Muxes := 2     
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   9 Input      7 Bit        Muxes := 2     
+	   8 Input      7 Bit        Muxes := 5     
+	   2 Input      7 Bit        Muxes := 4     
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 8     
+	 289 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 12    
+	   2 Input      4 Bit        Muxes := 17    
+	   8 Input      3 Bit        Muxes := 2     
+	 301 Input      3 Bit        Muxes := 1     
+	  43 Input      3 Bit        Muxes := 5     
+	 289 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 8     
+	   3 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 396   
+	   8 Input      1 Bit        Muxes := 302   
+	   4 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module MiniPiano 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 2     
+Module divclk_20ms__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module MusicRecorder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 602   
+	                9 Bit    Registers := 2     
+	                7 Bit    Registers := 3     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   8 Input     32 Bit        Muxes := 1     
+	   8 Input     24 Bit        Muxes := 2     
+	   9 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	 301 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 323   
+	   8 Input      1 Bit        Muxes := 301   
+Module scan_seg 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
+Module divclk_20ms__7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button__17 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__18 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__19 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module FreeMode 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 10    
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 14    
+	   2 Input     19 Bit        Muxes := 4     
+	   2 Input     18 Bit        Muxes := 3     
+	   9 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+Module divclk_20ms__6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button__15 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__16 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module scan_seg__2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
+Module divclk_20ms__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button__12 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__13 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__14 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module LittleStar 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	  43 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	  43 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 14    
+Module divclk_20ms__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button__9 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__10 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__11 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module HappyBirthday 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	  43 Input     32 Bit        Muxes := 2     
+	   8 Input     19 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 4     
+	  43 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+Module divclk_20ms__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__8 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module Spring 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   8 Input     32 Bit        Muxes := 1     
+	 289 Input     32 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	 289 Input      5 Bit        Muxes := 1     
+	 289 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+Module AutoPlayMode 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 2     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 2     
+Module divclk_20ms__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module debounce_button__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module scan_seg__1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
+Module littlestar_learning 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	  43 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 7     
+	   4 Input      4 Bit        Muxes := 6     
+	   7 Input      3 Bit        Muxes := 1     
+	  43 Input      3 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 8     
+	   3 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 9     
+	   8 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 4     
+Module divclk_20ms 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module debounce_button 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module VGAcontroller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 2     
+	                4 Bit    Registers := 6     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      2 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:94]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:96]
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/MusicRecorder.v:95]
+WARNING: [Synth 8-6014] Unused sequential element regN_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/scan_seg.v:35]
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "notes" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "div/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "div/clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element addr_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:116]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:195]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/FreeMode.v:101]
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element regN_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/scan_seg.v:35]
+INFO: [Synth 8-5545] ROM "div/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "div/clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:162]
+WARNING: [Synth 8-6014] Unused sequential element counter_stop_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:164]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/LittleStar.v:160]
+WARNING: [Synth 8-6014] Unused sequential element prepulse2_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:137]
+INFO: [Synth 8-5545] ROM "div/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "div/clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:130]
+WARNING: [Synth 8-6014] Unused sequential element counter_stop_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:132]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/HappyBirthday.v:128]
+INFO: [Synth 8-5545] ROM "div/cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "div/clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:669]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:670]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/imports/new/Spring.v:667]
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element regN_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/scan_seg.v:35]
+INFO: [Synth 8-5545] ROM "counter_break" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter_break" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter_beat" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element counter_beat_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:170]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:171]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:168]
+WARNING: [Synth 8-6014] Unused sequential element counter_deduct_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:175]
+WARNING: [Synth 8-6014] Unused sequential element grade_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/littlestar_learning.v:174]
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_20ms" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "yidongend_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "yidongend_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element hcount_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:29]
+WARNING: [Synth 8-6014] Unused sequential element vcount_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:40]
+WARNING: [Synth 8-6014] Unused sequential element h_reg was removed.  [D:/final-piano/piano/piano.srcs/sources_1/new/VGAcontroller.v:90]
+WARNING: [Synth 8-3917] design MiniPiano has port s driven by constant 0
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[255][0][30]' (FDE) to 'recordi_0/recorded_data_reg[255][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[254][0][30]' (FDE) to 'recordi_0/recorded_data_reg[254][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[253][0][30]' (FDE) to 'recordi_0/recorded_data_reg[253][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[252][0][30]' (FDE) to 'recordi_0/recorded_data_reg[252][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[251][0][30]' (FDE) to 'recordi_0/recorded_data_reg[251][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[250][0][30]' (FDE) to 'recordi_0/recorded_data_reg[250][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[249][0][30]' (FDE) to 'recordi_0/recorded_data_reg[249][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[248][0][30]' (FDE) to 'recordi_0/recorded_data_reg[248][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[247][0][30]' (FDE) to 'recordi_0/recorded_data_reg[247][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[246][0][30]' (FDE) to 'recordi_0/recorded_data_reg[246][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[245][0][30]' (FDE) to 'recordi_0/recorded_data_reg[245][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[244][0][30]' (FDE) to 'recordi_0/recorded_data_reg[244][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[243][0][30]' (FDE) to 'recordi_0/recorded_data_reg[243][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[242][0][30]' (FDE) to 'recordi_0/recorded_data_reg[242][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[241][0][30]' (FDE) to 'recordi_0/recorded_data_reg[241][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[240][0][30]' (FDE) to 'recordi_0/recorded_data_reg[240][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[239][0][30]' (FDE) to 'recordi_0/recorded_data_reg[239][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[238][0][30]' (FDE) to 'recordi_0/recorded_data_reg[238][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[237][0][30]' (FDE) to 'recordi_0/recorded_data_reg[237][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[236][0][30]' (FDE) to 'recordi_0/recorded_data_reg[236][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[235][0][30]' (FDE) to 'recordi_0/recorded_data_reg[235][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[234][0][30]' (FDE) to 'recordi_0/recorded_data_reg[234][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[233][0][30]' (FDE) to 'recordi_0/recorded_data_reg[233][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[232][0][30]' (FDE) to 'recordi_0/recorded_data_reg[232][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[231][0][30]' (FDE) to 'recordi_0/recorded_data_reg[231][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[230][0][30]' (FDE) to 'recordi_0/recorded_data_reg[230][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[229][0][30]' (FDE) to 'recordi_0/recorded_data_reg[229][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[228][0][30]' (FDE) to 'recordi_0/recorded_data_reg[228][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[227][0][30]' (FDE) to 'recordi_0/recorded_data_reg[227][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[226][0][30]' (FDE) to 'recordi_0/recorded_data_reg[226][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[225][0][30]' (FDE) to 'recordi_0/recorded_data_reg[225][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[224][0][30]' (FDE) to 'recordi_0/recorded_data_reg[224][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[223][0][30]' (FDE) to 'recordi_0/recorded_data_reg[223][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[222][0][30]' (FDE) to 'recordi_0/recorded_data_reg[222][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[221][0][30]' (FDE) to 'recordi_0/recorded_data_reg[221][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[220][0][30]' (FDE) to 'recordi_0/recorded_data_reg[220][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[219][0][30]' (FDE) to 'recordi_0/recorded_data_reg[219][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[218][0][30]' (FDE) to 'recordi_0/recorded_data_reg[218][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[217][0][30]' (FDE) to 'recordi_0/recorded_data_reg[217][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[216][0][30]' (FDE) to 'recordi_0/recorded_data_reg[216][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[215][0][30]' (FDE) to 'recordi_0/recorded_data_reg[215][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[214][0][30]' (FDE) to 'recordi_0/recorded_data_reg[214][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[213][0][30]' (FDE) to 'recordi_0/recorded_data_reg[213][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[212][0][30]' (FDE) to 'recordi_0/recorded_data_reg[212][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[211][0][30]' (FDE) to 'recordi_0/recorded_data_reg[211][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[210][0][30]' (FDE) to 'recordi_0/recorded_data_reg[210][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[209][0][30]' (FDE) to 'recordi_0/recorded_data_reg[209][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[208][0][30]' (FDE) to 'recordi_0/recorded_data_reg[208][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[207][0][30]' (FDE) to 'recordi_0/recorded_data_reg[207][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[206][0][30]' (FDE) to 'recordi_0/recorded_data_reg[206][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[205][0][30]' (FDE) to 'recordi_0/recorded_data_reg[205][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[204][0][30]' (FDE) to 'recordi_0/recorded_data_reg[204][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[203][0][30]' (FDE) to 'recordi_0/recorded_data_reg[203][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[202][0][30]' (FDE) to 'recordi_0/recorded_data_reg[202][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[201][0][30]' (FDE) to 'recordi_0/recorded_data_reg[201][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[200][0][30]' (FDE) to 'recordi_0/recorded_data_reg[200][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[199][0][30]' (FDE) to 'recordi_0/recorded_data_reg[199][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[198][0][30]' (FDE) to 'recordi_0/recorded_data_reg[198][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[197][0][30]' (FDE) to 'recordi_0/recorded_data_reg[197][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[196][0][30]' (FDE) to 'recordi_0/recorded_data_reg[196][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[195][0][30]' (FDE) to 'recordi_0/recorded_data_reg[195][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[194][0][30]' (FDE) to 'recordi_0/recorded_data_reg[194][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[193][0][30]' (FDE) to 'recordi_0/recorded_data_reg[193][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[192][0][30]' (FDE) to 'recordi_0/recorded_data_reg[192][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[191][0][30]' (FDE) to 'recordi_0/recorded_data_reg[191][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[190][0][30]' (FDE) to 'recordi_0/recorded_data_reg[190][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[189][0][30]' (FDE) to 'recordi_0/recorded_data_reg[189][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[188][0][30]' (FDE) to 'recordi_0/recorded_data_reg[188][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[187][0][30]' (FDE) to 'recordi_0/recorded_data_reg[187][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[186][0][30]' (FDE) to 'recordi_0/recorded_data_reg[186][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[185][0][30]' (FDE) to 'recordi_0/recorded_data_reg[185][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[184][0][30]' (FDE) to 'recordi_0/recorded_data_reg[184][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[183][0][30]' (FDE) to 'recordi_0/recorded_data_reg[183][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[182][0][30]' (FDE) to 'recordi_0/recorded_data_reg[182][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[181][0][30]' (FDE) to 'recordi_0/recorded_data_reg[181][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[180][0][30]' (FDE) to 'recordi_0/recorded_data_reg[180][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[179][0][30]' (FDE) to 'recordi_0/recorded_data_reg[179][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[178][0][30]' (FDE) to 'recordi_0/recorded_data_reg[178][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[177][0][30]' (FDE) to 'recordi_0/recorded_data_reg[177][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[176][0][30]' (FDE) to 'recordi_0/recorded_data_reg[176][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[175][0][30]' (FDE) to 'recordi_0/recorded_data_reg[175][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[174][0][30]' (FDE) to 'recordi_0/recorded_data_reg[174][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[173][0][30]' (FDE) to 'recordi_0/recorded_data_reg[173][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[172][0][30]' (FDE) to 'recordi_0/recorded_data_reg[172][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[171][0][30]' (FDE) to 'recordi_0/recorded_data_reg[171][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[170][0][30]' (FDE) to 'recordi_0/recorded_data_reg[170][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[169][0][30]' (FDE) to 'recordi_0/recorded_data_reg[169][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[168][0][30]' (FDE) to 'recordi_0/recorded_data_reg[168][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[167][0][30]' (FDE) to 'recordi_0/recorded_data_reg[167][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[166][0][30]' (FDE) to 'recordi_0/recorded_data_reg[166][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[165][0][30]' (FDE) to 'recordi_0/recorded_data_reg[165][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[164][0][30]' (FDE) to 'recordi_0/recorded_data_reg[164][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[163][0][30]' (FDE) to 'recordi_0/recorded_data_reg[163][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[162][0][30]' (FDE) to 'recordi_0/recorded_data_reg[162][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[161][0][30]' (FDE) to 'recordi_0/recorded_data_reg[161][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[160][0][30]' (FDE) to 'recordi_0/recorded_data_reg[160][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[159][0][30]' (FDE) to 'recordi_0/recorded_data_reg[159][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[158][0][30]' (FDE) to 'recordi_0/recorded_data_reg[158][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[157][0][30]' (FDE) to 'recordi_0/recorded_data_reg[157][0][31]'
+INFO: [Synth 8-3886] merging instance 'recordi_0/recorded_data_reg[156][0][30]' (FDE) to 'recordi_0/recorded_data_reg[156][0][31]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[255][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[254][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[253][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[252][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[251][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[250][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[249][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[248][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[247][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[246][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[245][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[244][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[243][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[242][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[241][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[240][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[239][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[238][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[237][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[236][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[235][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[234][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[233][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[232][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[231][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[230][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[229][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[228][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[227][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[226][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[225][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[224][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[223][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[222][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[221][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[220][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[219][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[218][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[217][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[216][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[215][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[214][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[213][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[212][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[211][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[210][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[209][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[208][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[207][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[206][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[205][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[204][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[203][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[202][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[201][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[200][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[199][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[198][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[197][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[196][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[195][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[194][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[193][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[192][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[191][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[190][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[189][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[188][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[187][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[186][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[185][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[184][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[183][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[182][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[181][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[180][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[179][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[178][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[177][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[176][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[175][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[174][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[173][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[172][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[171][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[170][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[169][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[168][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[167][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[166][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[165][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[164][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[163][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[162][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[161][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[160][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[159][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[158][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[157][0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (recordi_0/\recorded_data_reg[156][0][3] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[7][31]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[7][9]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[6][31]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[6][13]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[5][31]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[5][16]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[4][31]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[4][11]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[3][31]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[3][2]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[2][31]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[1][31]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (notes_reg[1][15]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[7][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[6][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[5][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[4][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[3][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[2][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[1][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (real_notes_reg[0][3]) is unused and will be removed from module FreeMode.
+WARNING: [Synth 8-3332] Sequential element (song2/b2/key_rst_reg) is unused and will be removed from module AutoPlayMode.
+WARNING: [Synth 8-3332] Sequential element (song2/b2/key_rst_pre_reg) is unused and will be removed from module AutoPlayMode.
+WARNING: [Synth 8-3332] Sequential element (song2/b2/key_rst_pre_pre_reg) is unused and will be removed from module AutoPlayMode.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:49 . Memory (MB): peak = 889.855 ; gain = 647.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|Spring      | notes      | 32x19         | LUT            | 
+|Spring      | notes      | 32x19         | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |MusicRecorder__GB0 |           1|      5713|
+|2     |MusicRecorder__GB1 |           1|     19425|
+|3     |MiniPiano__GC0     |           1|      6130|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'dcm_25m/clk_out1' to pin 'dcm_25m/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:55 . Memory (MB): peak = 899.688 ; gain = 657.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:57 . Memory (MB): peak = 957.863 ; gain = 715.180
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |MusicRecorder__GB0 |           1|      5713|
+|2     |MusicRecorder__GB1 |           1|     19425|
+|3     |MiniPiano__GC0     |           1|      6130|
++------+-------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (auto_play/song1/light_reg[0]) is unused and will be removed from module MiniPiano.
+WARNING: [Synth 8-3332] Sequential element (learn/learn/light_reg[6]) is unused and will be removed from module MiniPiano.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:01:01 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:01:03 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:01:03 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:01:04 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:01:04 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:01:04 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:01:04 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |dcm_25m       |         1|
+|2     |pic           |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |dcm_25m |     1|
+|2     |pic     |     1|
+|3     |CARRY4  |   271|
+|4     |LUT1    |    71|
+|5     |LUT2    |   242|
+|6     |LUT3    |  1049|
+|7     |LUT4    |   579|
+|8     |LUT5    |   913|
+|9     |LUT6    |  3571|
+|10    |MUXF7   |  1354|
+|11    |MUXF8   |   665|
+|12    |FDCE    |   403|
+|13    |FDPE    |    15|
+|14    |FDRE    | 11462|
+|15    |FDSE    |    22|
+|16    |LD      |     8|
+|17    |LDC     |     1|
+|18    |LDCP    |     4|
+|19    |LDP     |     1|
+|20    |IBUF    |    17|
+|21    |OBUF    |    47|
++------+--------+------+
+
+Report Instance Areas: 
++------+----------------+--------------------+------+
+|      |Instance        |Module              |Cells |
++------+----------------+--------------------+------+
+|1     |top             |                    | 20712|
+|2     |  auto_play     |AutoPlayMode        |  1272|
+|3     |    b1          |debounce_button_12  |     4|
+|4     |    b2          |debounce_button_13  |     4|
+|5     |    div         |divclk_20ms_14      |    82|
+|6     |    song1       |LittleStar          |   331|
+|7     |      b         |debounce_button_23  |     4|
+|8     |      b1        |debounce_button_24  |     4|
+|9     |      b2        |debounce_button_25  |     4|
+|10    |      div       |divclk_20ms_26      |    83|
+|11    |    song2       |HappyBirthday       |   333|
+|12    |      b         |debounce_button_20  |     4|
+|13    |      b1        |debounce_button_21  |     4|
+|14    |      div       |divclk_20ms_22      |    82|
+|15    |    song3       |Spring              |   456|
+|16    |      b         |debounce_button_16  |     4|
+|17    |      b1        |debounce_button_17  |     4|
+|18    |      b2        |debounce_button_18  |     4|
+|19    |      div       |divclk_20ms_19      |    82|
+|20    |    three_seg   |scan_seg_15         |    39|
+|21    |  confirm       |debounce_button     |     4|
+|22    |  div           |divclk_20ms         |    83|
+|23    |  free          |FreeMode            |   346|
+|24    |    b1          |debounce_button_8   |     4|
+|25    |    b2          |debounce_button_9   |     4|
+|26    |    b3          |debounce_button_10  |     4|
+|27    |    div         |divclk_20ms_11      |    83|
+|28    |  learn         |LearnMode           |   555|
+|29    |    learn       |littlestar_learning |   555|
+|30    |      b1        |debounce_button_3   |     3|
+|31    |      b2        |debounce_button_4   |     3|
+|32    |      b3        |debounce_button_5   |     3|
+|33    |      div       |divclk_20ms_6       |    83|
+|34    |      three_seg |scan_seg_7          |    38|
+|35    |  record        |MusicRecorder       | 17988|
+|36    |    c           |debounce_button_0   |     4|
+|37    |    div         |divclk_20ms_1       |    83|
+|38    |    r           |debounce_button_2   |     4|
+|39    |  three_seg     |scan_seg            |    39|
+|40    |  vga           |VGAcontroller       |   303|
++------+----------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:01:04 . Memory (MB): peak = 961.062 ; gain = 718.379
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 87 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:57 . Memory (MB): peak = 961.062 ; gain = 363.297
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:01:04 . Memory (MB): peak = 961.062 ; gain = 718.379
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2321 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'MiniPiano' is not ideal for floorplanning, since the cellview 'MusicRecorder' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 14 instances were transformed.
+  LD => LDCE: 8 instances
+  LDC => LDCE: 1 instances
+  LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 4 instances
+  LDP => LDPE: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+443 Infos, 143 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 961.062 ; gain = 729.879
+INFO: [Common 17-1381] The checkpoint 'D:/final-piano/piano/piano.runs/synth_1/MiniPiano.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file MiniPiano_utilization_synth.rpt -pb MiniPiano_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 961.062 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  3 15:40:51 2024...

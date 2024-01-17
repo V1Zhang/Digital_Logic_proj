@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jan  3 11:38:28 2024
+# Process ID: 43224
+# Current directory: D:/Digital Logic/WORK/piano/piano.runs/dcm_25m_synth_1
+# Command line: vivado.exe -log dcm_25m.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dcm_25m.tcl
+# Log file: D:/Digital Logic/WORK/piano/piano.runs/dcm_25m_synth_1/dcm_25m.vds
+# Journal file: D:/Digital Logic/WORK/piano/piano.runs/dcm_25m_synth_1\vivado.jou
+#-----------------------------------------------------------
+source dcm_25m.tcl -notrace

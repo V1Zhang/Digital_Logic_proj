@@ -1,0 +1,96 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Wed Jan  3 15:42:24 2024
+| Host         : supreme running 64-bit major release  (build 9200)
+| Command      : report_drc -file MiniPiano_drc_routed.rpt -pb MiniPiano_drc_routed.pb -rpx MiniPiano_drc_routed.rpx
+| Design       : MiniPiano
+| Device       : xc7a35tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 10
++----------+----------+-----------------------------------------------------+------------+
+| Rule     | Severity | Description                                         | Violations |
++----------+----------+-----------------------------------------------------+------------+
+| CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
+| IOSR-1   | Warning  | IOB set reset sharing                               | 3          |
+| PDRC-153 | Warning  | Gated clock check                                   | 6          |
++----------+----------+-----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+CFGBVS-1#1 Warning
+Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
+Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+IOSR-1#1 Warning
+IOB set reset sharing  
+IO center connects to flops which have these auto_play/song1/div/clk_20ms_reg_0, free/div/cnt_reg[0]_0, learn/learn/div/cnt_reg[30]_0, record/div/start5 set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Related violations: <none>
+
+IOSR-1#2 Warning
+IOB set reset sharing  
+IO down connects to flops which have these auto_play/song1/div/clk_20ms_reg_0, free/div/cnt_reg[0]_0, learn/learn/div/cnt_reg[30]_0 set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Related violations: <none>
+
+IOSR-1#3 Warning
+IOB set reset sharing  
+IO up connects to flops which have these auto_play/song1/div/clk_20ms_reg_0, free/div/cnt_reg[0]_0, learn/learn/div/cnt_reg[30]_0, record/div/start5 set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net auto_play/light_reg[6]_i_2_n_0 is a gated clock net sourced by a combinational pin auto_play/light_reg[6]_i_2/O, cell auto_play/light_reg[6]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net free/notes_reg[1][17]/G0 is a gated clock net sourced by a combinational pin free/notes_reg[1][17]/L3_2/O, cell free/notes_reg[1][17]/L3_2 (in free/notes_reg[1][17] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net free/notes_reg[1][17]_i_1_n_0 is a gated clock net sourced by a combinational pin free/notes_reg[1][17]_i_1/O, cell free/notes_reg[1][17]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net free/notes_reg[1][18]/G0 is a gated clock net sourced by a combinational pin free/notes_reg[1][18]/L3_2/O, cell free/notes_reg[1][18]/L3_2 (in free/notes_reg[1][18] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net free/notes_reg[3][17]/G0 is a gated clock net sourced by a combinational pin free/notes_reg[3][17]/L3_2/O, cell free/notes_reg[3][17]/L3_2 (in free/notes_reg[3][17] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net free/notes_reg[5][17]/G0 is a gated clock net sourced by a combinational pin free/notes_reg[5][17]/L3_2/O, cell free/notes_reg[5][17]/L3_2 (in free/notes_reg[5][17] macro). This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+

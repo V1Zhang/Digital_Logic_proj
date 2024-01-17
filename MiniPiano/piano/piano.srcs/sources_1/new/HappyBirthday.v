@@ -22,6 +22,8 @@
 
 module HappyBirthday(
 input clk,rst_n,key,
+input reset1,
+input reset2,
 output reg [6:0]light,
 output speaker,
 output s
@@ -102,6 +104,16 @@ wire clk_20ms;
 wire key_pulse;
 divclk_20ms div(clk,rst_n,clk_20ms);
 debounce_button b(clk_20ms,rst_n,key,key_pulse);
+//reset
+wire key1pulse;
+wire key2pulse;
+debounce_button b1(clk_20ms,rst_n,reset1,key1pulse);
+debounce_button b2(clk_20ms,rst_n,reset2,key2pulse);
+reg prepulse1;
+reg nowpulse1;
+reg prepulse2;
+reg nowpulse2;
+//
 reg [31:0] counter ;
 reg [31:0] counter_beat ;
 reg [31:0] counter_stop ;
@@ -120,19 +132,37 @@ if(~rst_n)
     counter_stop<=0;
     pre_pulse1<=1'b0;
     now_pulse1<=1'b0;
+    prepulse1<=1'b0;
+    nowpulse1<=1'b0;
+    prepulse2<=1'b0;
+    nowpulse2<=1'b0;
     stop<=1'b1;
  end
  else
     begin
+        prepulse1<=nowpulse1;
+        nowpulse1<=key1pulse;
+        prepulse2<=nowpulse2;
         pre_pulse1<=now_pulse1;
         now_pulse1<=key_pulse;
-        if(~pre_pulse1&now_pulse1)
+       if(~prepulse1 & nowpulse1)
+           begin
+           state<=0;
+           stop<=1;
+           end   
+        else if(~prepulse2 & nowpulse2)
+           begin
+           state<=0;
+           stop<=1;
+           end 
+        else if(~pre_pulse1&now_pulse1)
             begin
               stop=~stop;
             end 
         else 
             begin
                 stop=stop;
+                state<=state;
             end
 
         if(state!=26)
@@ -148,44 +178,47 @@ if(~rst_n)
                        7: light = 7'b0000001;
                        default: light = 7'b0000000;
                    endcase
-               end
-        begin
-        if(counter_beat<allnote[state][1])
-        begin
-            if(stop)
+            if(counter_beat<allnote[state][1])
             begin
-                pwm<=0;
-                counter_beat<=counter_beat;
-                counter<=counter;
+                if(stop)
+                begin
+                    pwm<=0;
+                    counter_beat<=counter_beat;
+                    counter<=counter;
+                end
+                else
+                begin
+                    counter_beat<=counter_beat+1'b1;
+                        if(counter<notes[allnote[state][0]])
+                            begin
+                                counter<=counter+1'b1;
+                            end
+                        else 
+                            begin
+                                pwm=~pwm;
+                                counter<=0;
+                            end
+                end  
             end
             else
             begin
-                counter_beat<=counter_beat+1'b1;
-                     if(counter<notes[allnote[state][0]])
-                        begin
-                            counter<=counter+1'b1;
-                        end
-                    else 
-                        begin
-                            pwm=~pwm;
-                            counter<=0;
-                        end
-            end  
-        end
+                pwm<=0;
+            if(counter_stop<1000000)
+                begin
+                    counter_stop<=counter_stop+1'b1;
+                end
+                else 
+                begin
+                counter_beat<=0;
+                state<=state+1'b1;
+                counter_stop<=0;
+                end 
+            end      
+            end
         else
         begin
-            pwm<=0;
-          if(counter_stop<1000000)
-            begin
-                counter_stop<=counter_stop+1'b1;
-            end
-            else 
-            begin
-            counter_beat<=0;
-            state<=state+1'b1;
-            counter_stop<=0;
-            end 
-        end      
+            state<=0;
+            stop<=1'b1;
         end
     end
 end

@@ -1,73 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1703990945">
-  <File Type="OPT-HWDEF" Name="vga_colorbar.hwdef"/>
-  <File Type="PA-DCP" Name="vga_colorbar.dcp"/>
-  <File Type="OPT-DCP" Name="vga_colorbar_opt.dcp"/>
-  <File Type="ROUTE-PWR" Name="vga_colorbar_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="vga_colorbar.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="vga_colorbar_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="vga_colorbar_reports.tcl"/>
-  <File Type="BG-DRC" Name="vga_colorbar.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="vga_colorbar_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="vga_colorbar_timing_summary_init.rpt"/>
-  <File Type="OPT-DRC" Name="vga_colorbar_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="vga_colorbar_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DCP" Name="vga_colorbar_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="vga_colorbar_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="vga_colorbar_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="vga_colorbar_placed.dcp"/>
-  <File Type="PLACE-IO" Name="vga_colorbar_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="vga_colorbar_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="vga_colorbar_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="vga_colorbar_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="vga_colorbar_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="vga_colorbar_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="vga_colorbar_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="vga_colorbar_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="vga_colorbar_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="vga_colorbar_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="vga_colorbar_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="vga_colorbar_drc_physopted.rpt"/>
-  <File Type="BG-BIT" Name="vga_colorbar.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="vga_colorbar_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="vga_colorbar_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="vga_colorbar_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="vga_colorbar_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="vga_colorbar_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="vga_colorbar_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="vga_colorbar.msk"/>
-  <File Type="ROUTE-DRC-RPX" Name="vga_colorbar_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="vga_colorbar.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="vga_colorbar_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="vga_colorbar.rbt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="vga_colorbar_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="vga_colorbar.bin"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="vga_colorbar_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="vga_colorbar_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="vga_colorbar_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="vga_colorbar_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="vga_colorbar_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="vga_colorbar_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="vga_colorbar_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="vga_colorbar_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="vga_colorbar.vdi"/>
-  <File Type="ROUTE-CLK" Name="vga_colorbar_clock_utilization_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="vga_colorbar_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="vga_colorbar_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="vga_colorbar_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="vga_colorbar_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="vga_colorbar_timing_summary_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="vga_colorbar.nky"/>
-  <File Type="BITSTR-BMM" Name="vga_colorbar_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="vga_colorbar.mmi"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcsg324-1" LaunchTime="1704267667">
+  <File Type="PWROPT-DCP" Name="MiniPiano_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="MiniPiano_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="MiniPiano.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="MiniPiano_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="MiniPiano_reports.tcl"/>
+  <File Type="BG-DRC" Name="MiniPiano.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="MiniPiano_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="MiniPiano_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="MiniPiano.hwdef"/>
+  <File Type="OPT-DCP" Name="MiniPiano_opt.dcp"/>
+  <File Type="OPT-DRC" Name="MiniPiano_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="MiniPiano_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="MiniPiano_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="MiniPiano_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="MiniPiano_placed.dcp"/>
+  <File Type="PLACE-IO" Name="MiniPiano_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="MiniPiano_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="MiniPiano_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="MiniPiano_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="MiniPiano_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="MiniPiano_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="MiniPiano_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="MiniPiano_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="MiniPiano_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="MiniPiano_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="MiniPiano_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="MiniPiano_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="MiniPiano.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="MiniPiano_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="MiniPiano_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="MiniPiano_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="MiniPiano_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="MiniPiano_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="MiniPiano_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="MiniPiano.msk"/>
+  <File Type="ROUTE-DRC-RPX" Name="MiniPiano_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="MiniPiano.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="MiniPiano_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="MiniPiano.rbt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MiniPiano_methodology_drc_routed.rpx"/>
+  <File Type="BG-BIN" Name="MiniPiano.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MiniPiano_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="MiniPiano_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="MiniPiano_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="MiniPiano_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="MiniPiano_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="MiniPiano_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="MiniPiano_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="MiniPiano_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="MiniPiano.vdi"/>
+  <File Type="ROUTE-CLK" Name="MiniPiano_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="MiniPiano_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="MiniPiano_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="MiniPiano_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="MiniPiano_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="MiniPiano_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="MiniPiano.nky"/>
+  <File Type="BITSTR-BMM" Name="MiniPiano_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="MiniPiano.mmi"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="vga_colorbar.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="vga_colorbar.sysdef"/>
+  <File Type="BITSTR-LTX" Name="MiniPiano.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="MiniPiano.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../git/IP/dcm_25m/dcm_25m.xci">
+    <File Path="$PSRCDIR/sources_1/new/AutoPlayMode.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/FreeMode.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/FreeMode.v"/>
+        <Attr Name="ImportTime" Val="1703676105"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/HappyBirthday.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/LearnMode.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/LittleStar.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/LittleStar.v"/>
+        <Attr Name="ImportTime" Val="1703060712"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/MusicRecorder.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/Spring.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/Spring.v"/>
+        <Attr Name="ImportTime" Val="1704117391"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -80,44 +127,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/vga_colorbar.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/HappyBirthday.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/JingleBells.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/JingleBells.v"/>
-        <Attr Name="ImportTime" Val="1702951992"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/LittleStar.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/LittleStar.v"/>
-        <Attr Name="ImportTime" Val="1703060712"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/debounce_button.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -125,65 +136,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/divclk_20ms.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/scan_seg.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/seven_seg_tube.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/seven_seg_tube.v"/>
-        <Attr Name="ImportTime" Val="1702103763"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/AutoPlayMode.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/MiniPiano.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/little_star.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/flower.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/LearnMode.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -191,38 +143,61 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/littlestar_learning.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/FreeMode.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/FreeMode.v"/>
-        <Attr Name="ImportTime" Val="1703676105"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../git/IP/dcm_25m.xcix">
+    <File Path="$PSRCDIR/sources_1/new/scan_seg.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/MusicRecorder.v">
+    <File Path="$PSRCDIR/sources_1/imports/new/seven_seg_tube.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/seven_seg_tube.v"/>
+        <Attr Name="ImportTime" Val="1702103763"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="c:/Users/lenovo/Desktop/CrazyBird.coe">
+    <File Path="$PSRCDIR/sources_1/new/MiniPiano.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Digital Logic/WORK/piano/mode4.coe">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/mode4.coe"/>
+        <Attr Name="ImportTime" Val="1704192721"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mode_1.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mode_2.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/mode_3.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CrazyBird.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -230,7 +205,8 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="vga_colorbar"/>
+      <Option Name="TopModule" Val="MiniPiano"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -258,5 +234,6 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="dcm_25m"/>
   <BlockFileSet Type="BlockSrcs" Name="pic"/>
 </GenRun>
