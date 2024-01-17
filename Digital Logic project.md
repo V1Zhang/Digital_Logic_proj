@@ -198,7 +198,7 @@ lab: Wed 5-6
    ```
 
 3. We explored **different various rhythm** of music in the third song `春よ、来い` , which has **17 different notes** in different tone, and **4 different time interval** in rhythm. 
-   <img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102093857370.png" alt="image-20240102093857370" style="zoom:50%;" />          <img src="C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20240102093909646.png" alt="image-20240102093909646" style="zoom:50%;" />
+   <img src="pic/截图1.png" alt="截图1" title="截图1" width="67%">        <img src="pic/截图2.png" alt="截图2" title="截图2" width="67%">
 
 4. **Real-time changes in ratings** are provided based on the difference between the user's button time and the standard time.  **When the difference is greater than 25000000 ns, the grade will decrease by one.**
    We use `counter_deduct` to record the time out of range.
